@@ -20,9 +20,9 @@ class HashTable:
             index += base * pow(26, (len(k)-1)-i)
         return index % len(self.table)
 
-    def hash2(self, k):# turns indvidual letter to a int value and then adds it together
-        num = ''.join(str(ord(a))for a in k)
-        return int(num) % len(self.table)
+    def hash2(self, k):
+        pos =  k % len(self.table)
+        self.table[pos] = k
 
 
 
